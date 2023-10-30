@@ -1,26 +1,39 @@
+using AzamRealEstate.Models;
+using AzamRealEstate.Services;
+
 namespace AzamRealEstate.Views;
 
 public partial class AddDepartment : ContentPage
 {
-	public AddDepartment()
-	{
-		InitializeComponent();
-	}
+    public AddDepartment()
+    {
+        InitializeComponent();
+    }
 
 
-	 void BtnAddDepartment_Clicked(System.Object sender, System.EventArgs e)
-	{
-        string Name = EntDeptName.Text;
+    async void BtnAddDepartment_Clicked(object sender, EventArgs e)
+    {
+        
+        if (string.IsNullOrEmpty(EntDeptName.Text))
+        {
+            await DisplayAlert("", "Name is required", "Cancel");
+        }
 
-        //var response = await ApiService.RegisterEmployee(employee);
-        //if (response)
-        //{
-        //    await DisplayAlert("", "Employee has been created", "Alright");
-        //    await Navigation.PushModalAsync(new EmployeeListView());
-        //}
-        //else
-        //{
-        //    await DisplayAlert("", "Oops something went wrong", "Cancel");
-        //}
+        var dept = new Department
+        {
+            Name = EntDeptName.Text
+        };
+
+
+        var response = await DeptService.CreateDepartment(dept);
+        if (response)
+        {
+            await DisplayAlert("", "Department has been created", "Ok");
+            await Navigation.PushModalAsync(new DepartmentList());
+        }
+        else
+        {
+            await DisplayAlert("", "Oops something went wrong", "Cancel");
+        }
     }
 }

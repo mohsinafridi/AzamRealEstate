@@ -10,11 +10,11 @@ namespace AzamRealEstate.Services
 {
     public static class DeptService
     {
-        public static async Task<bool> CreateDepartment(Employee employee)
+        public static async Task<bool> CreateDepartment(Department department)
         {
 
             var httpClient = new HttpClient();
-            var json = JsonConvert.SerializeObject(employee);
+            var json = JsonConvert.SerializeObject(department);
             var content = new StringContent(json, Encoding.UTF8, "application/json");
             var response = await httpClient.PostAsync(AppSettings.ApiUrl + "api/department/add-department", content);
             if (!response.IsSuccessStatusCode) return false;
