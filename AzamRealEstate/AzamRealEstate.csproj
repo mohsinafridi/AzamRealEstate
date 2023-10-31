@@ -50,11 +50,29 @@
 
 	<ItemGroup>
 	  <AndroidResource Remove="Controls\**" />
+	  <AndroidResource Remove="Database\**" />
 	  <Compile Remove="Controls\**" />
+	  <Compile Remove="Database\**" />
 	  <EmbeddedResource Remove="Controls\**" />
+	  <EmbeddedResource Remove="Database\**" />
 	  <MauiCss Remove="Controls\**" />
+	  <MauiCss Remove="Database\**" />
 	  <MauiXaml Remove="Controls\**" />
+	  <MauiXaml Remove="Database\**" />
 	  <None Remove="Controls\**" />
+	  <None Remove="Database\**" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Compile Remove="AppShell.xaml.cs" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <MauiXaml Remove="AppShell.xaml" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Compile Include="Database\AppDbContext.cs" />
 	</ItemGroup>
 
 	<ItemGroup>
@@ -66,9 +84,6 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <MauiXaml Update="AppShell.xaml">
-	    <Generator>MSBuild:Compile</Generator>
-	  </MauiXaml>
 	  <MauiXaml Update="Views\Department\AddDepartment.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
@@ -91,5 +106,7 @@
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	</ItemGroup>
+
+	<ProjectExtensions><VisualStudio><UserProperties XamarinHotReloadDebuggerTimeoutExceptionAzamRealEstateHideInfoBar="True" /></VisualStudio></ProjectExtensions>
 
 </Project>

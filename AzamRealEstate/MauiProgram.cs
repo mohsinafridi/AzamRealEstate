@@ -27,7 +27,7 @@ namespace AzamRealEstate
             // Services
             builder.Services.AddSingleton<AppDbContext>();
             builder.Services.AddSingleton<IDepartmentService, DepartmentService>();
-            
+
 
 
             // Views
@@ -37,6 +37,7 @@ namespace AzamRealEstate
             builder.Services.AddSingleton<AddDepartment>();
             builder.Services.AddTransient<DepartmentDetailView>();
             builder.Services.AddTransient<DepartmentList>();
+            builder.Services.AddTransient<CreateDepartment>();
 
             // ViewModel
             builder.Services.AddTransient<AddDepartmentViewModel>();

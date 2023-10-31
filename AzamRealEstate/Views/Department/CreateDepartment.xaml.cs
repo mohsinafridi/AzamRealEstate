@@ -6,9 +6,11 @@ public partial class CreateDepartment : ContentPage
 {
     public AddDepartmentViewModel viewModel;
     public CreateDepartment(AddDepartmentViewModel model)
-	{
-		InitializeComponent();
-		
-		this.BindingContext = viewModel = model;
-	}
+    {
+        InitializeComponent();
+
+        this.BindingContext = viewModel = model;
+    }
+
+
 }

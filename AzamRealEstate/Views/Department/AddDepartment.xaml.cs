@@ -1,5 +1,6 @@
 using AzamRealEstate.Services;
 using AzamRealEstate.Models;
+using AzamRealEstate.ViewModels;
 
 namespace AzamRealEstate.Views.Department;
 
@@ -40,4 +41,9 @@ public partial class AddDepartment : ContentPage
     {
         await Navigation.PushModalAsync(new DepartmentList());
     }
+    private async void TapCreateDept_Tapped(object sender, TappedEventArgs e)
+    {
+        await Navigation.PushModalAsync(new CreateDepartment(new AddDepartmentViewModel()));
+    }
+    
 }

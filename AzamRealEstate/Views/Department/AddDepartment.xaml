@@ -50,6 +50,22 @@
                 </TapGestureRecognizer>
             </HorizontalStackLayout.GestureRecognizers>
         </HorizontalStackLayout>
+        
+        <HorizontalStackLayout>
+            <Label Text="Create new department"
+         FontSize="Medium"
+         TextColor="#101010"
+         >
+            </Label>
+
+            <HorizontalStackLayout.GestureRecognizers>
+                <TapGestureRecognizer x:Name="TapCreateDept"
+                            Tapped="TapCreateDept_Tapped">
+
+                </TapGestureRecognizer>
+            </HorizontalStackLayout.GestureRecognizers>
+        </HorizontalStackLayout>
+
     </VerticalStackLayout>
 
 

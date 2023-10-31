@@ -1,23 +1,20 @@
 ﻿using AzamRealEstate.Models;
-using AzamRealEstate.Views;
 using CommunityToolkit.Mvvm.ComponentModel;
-using System;
-using System.Collections.Generic;
-using System.Diagnostics.Metrics;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
+using CommunityToolkit.Mvvm.Input;
 namespace AzamRealEstate.ViewModels
 {
-    public class AddDepartmentViewModel : ObservableObject
+    public partial class AddDepartmentViewModel : ObservableObject
     {
-        public Department DepartmentDetails { get; set; }
+       
         public AddDepartmentViewModel()
         {
             DepartmentDetails = new Department();
         }
 
+        public Department DepartmentDetails { get; set; }
+
+
+        [RelayCommand]
         public async void AddDepartment()
         {
 
@@ -29,7 +26,8 @@ namespace AzamRealEstate.ViewModels
             {
                 await Shell.Current.DisplayAlert("Department Added", "Department Added Successfully", "OK");
 
-                await Shell.Current.GoToAsync($"{nameof(DepartmentList)}");
+                await Shell.Current.GoToAsync("..");
+                // await Shell.Current.GoToAsync($"{nameof(DepartmentList)}");
             }
             {
                 await Shell.Current.DisplayAlert("Department Not Saved", "Something went wrong with the Department Details", "OK");

@@ -12,7 +12,7 @@ namespace AzamRealEstate.Database
 
         public const string DatabaseFilename = "AzamRealEstate.db3";
 
-        public const SQLite.SQLiteOpenFlags Flags = SQLite.SQLiteOpenFlags.ReadWrite | SQLite.SQLiteOpenFlags.Create | SQLite.SQLiteOpenFlags.SharedCache;
+        public const SQLiteOpenFlags Flags = SQLiteOpenFlags.ReadWrite | SQLiteOpenFlags.Create | SQLiteOpenFlags.SharedCache;
         public static string dtabasePath => Path.Combine(FileSystem.AppDataDirectory, DatabaseFilename);
 
         public AppDbContext()
