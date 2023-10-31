@@ -9,9 +9,7 @@ public partial class AppShell : Shell
 	{
 		InitializeComponent();
 
-        Routing.RegisterRoute(nameof(AddEmployee), typeof(AddEmployee));
-        Routing.RegisterRoute(nameof(EmployeeListView), typeof(EmployeeListView));
-
+        Routing.RegisterRoute(nameof(CreateDepartment), typeof(CreateDepartment));
         Routing.RegisterRoute(nameof(AddDepartment), typeof(AddDepartment));
         Routing.RegisterRoute(nameof(DepartmentList), typeof(DepartmentList));
         

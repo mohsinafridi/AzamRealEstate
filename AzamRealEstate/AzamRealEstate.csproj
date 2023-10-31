@@ -49,18 +49,30 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <AndroidResource Remove="Controls\**" />
+	  <Compile Remove="Controls\**" />
+	  <EmbeddedResource Remove="Controls\**" />
+	  <MauiCss Remove="Controls\**" />
+	  <MauiXaml Remove="Controls\**" />
+	  <None Remove="Controls\**" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="CommunityToolkit.Mvvm" Version="8.2.2" />
 		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="7.0.0" />
+		<PackageReference Include="MvvmLightLibs" Version="5.4.1.1" />
 		<PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+		<PackageReference Include="sqlite-net-pcl" Version="1.8.116" />
 	</ItemGroup>
 
 	<ItemGroup>
 	  <MauiXaml Update="AppShell.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="Controls\CustomFlyoutContent.xaml">
+	  <MauiXaml Update="Views\Department\AddDepartment.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="Views\Department\AddDepartment.xaml">
+	  <MauiXaml Update="Views\Department\CreateDepartment.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Views\Employee\AddEmployee.xaml">

@@ -1,4 +1,4 @@
-﻿using AzamRealEstate.Views;
+﻿using AzamRealEstate.Database;
 
 namespace AzamRealEstate
 {
@@ -8,7 +8,10 @@ namespace AzamRealEstate
         {
             InitializeComponent();
 
+            // MainPage = new CreateDepartment(new ViewModels.AddDepartmentViewModel());
             MainPage = new AppShell();
         }
+
+        public static AppDbContext Database { get; private set; }
     }
 }

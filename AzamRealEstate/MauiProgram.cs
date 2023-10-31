@@ -1,4 +1,9 @@
-﻿using Microsoft.Extensions.Logging;
+﻿using AzamRealEstate.Database;
+using AzamRealEstate.Services;
+using AzamRealEstate.ViewModels;
+using AzamRealEstate.Views;
+using AzamRealEstate.Views.Department;
+using Microsoft.Extensions.Logging;
 
 namespace AzamRealEstate
 {
@@ -18,6 +23,23 @@ namespace AzamRealEstate
 #if DEBUG
 		builder.Logging.AddDebug();
 #endif
+
+            // Services
+            builder.Services.AddSingleton<AppDbContext>();
+            builder.Services.AddSingleton<IDepartmentService, DepartmentService>();
+            
+
+
+            // Views
+            builder.Services.AddSingleton<EmployeeListView>();
+            builder.Services.AddTransient<AddEmployee>();
+
+            builder.Services.AddSingleton<AddDepartment>();
+            builder.Services.AddTransient<DepartmentDetailView>();
+            builder.Services.AddTransient<DepartmentList>();
+
+            // ViewModel
+            builder.Services.AddTransient<AddDepartmentViewModel>();
 
             return builder.Build();
         }
