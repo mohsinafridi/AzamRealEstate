@@ -6,9 +6,10 @@
 
 
 
-    <CollectionView x:Name="CvDepartment"
+    <CollectionView x:Name="CvDepartments"
                   Margin="10"
                   SelectionMode="Single"
+                    SelectionChanged="CvDepartments_SelectionChanged"
                  >
 
         <CollectionView.ItemsLayout>

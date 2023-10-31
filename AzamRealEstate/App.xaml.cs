@@ -8,7 +8,7 @@ namespace AzamRealEstate
         {
             InitializeComponent();
 
-            MainPage = new AddDepartment();
+            MainPage = new AppShell();
         }
     }
 }

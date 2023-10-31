@@ -1,25 +1,24 @@
-using AzamRealEstate.Models;
 using AzamRealEstate.Services;
+using AzamRealEstate.Models;
 
-namespace AzamRealEstate.Views;
+namespace AzamRealEstate.Views.Department;
 
 public partial class AddDepartment : ContentPage
 {
-    public AddDepartment()
-    {
-        InitializeComponent();
-    }
-
+	public AddDepartment()
+	{
+		InitializeComponent();
+	}
 
     async void BtnAddDepartment_Clicked(object sender, EventArgs e)
     {
-        
+
         if (string.IsNullOrEmpty(EntDeptName.Text))
         {
             await DisplayAlert("", "Name is required", "Cancel");
         }
 
-        var dept = new Department
+        var dept = new AzamRealEstate.Models.Department
         {
             Name = EntDeptName.Text
         };
@@ -35,5 +34,10 @@ public partial class AddDepartment : ContentPage
         {
             await DisplayAlert("", "Oops something went wrong", "Cancel");
         }
+    }
+
+    private async void TapDeptList_Tapped(object sender, TappedEventArgs e)
+    {
+        await Navigation.PushModalAsync(new DepartmentList());
     }
 }

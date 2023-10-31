@@ -30,5 +30,15 @@ namespace AzamRealEstate.Services
 
             return JsonConvert.DeserializeObject<List<Department>>(response);
         }
+
+        public static async Task<Department> GetDepartment(int deptId)
+        {
+
+            var httpClient = new HttpClient();
+
+            var response = await httpClient.GetStringAsync(AppSettings.ApiUrl + "api/department/"+deptId);
+
+            return JsonConvert.DeserializeObject<Department>(response);
+        }
     }
 }
